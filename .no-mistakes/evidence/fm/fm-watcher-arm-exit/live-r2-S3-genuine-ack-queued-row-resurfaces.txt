@@ -1,0 +1,7 @@
+=== S3: genuine session ack earlier (acked, no sentinel) + queued row -> re-arm must resurface (#2065)
+LAB FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.mdvfwS
+  arm r1: EXITED rc=0 after 15s; .watch.lock=ABSENT
+  | watcher: started pid=62195 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:63430.1790367987.DPBCej; reopen-count=none; reopen-settled=none
+  lab removed

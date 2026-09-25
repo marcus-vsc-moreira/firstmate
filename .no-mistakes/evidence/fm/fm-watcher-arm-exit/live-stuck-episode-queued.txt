@@ -1,0 +1,57 @@
+LIVE LAB: FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.OFvwbb (disposable lab home). Seed: marker announced:downtime:stuckgen1, one queued wake row, no session, no re-arm loop.
+Each step: operator runs 'bin/fm-watch-arm.sh --restart', waits 12s, checks if the watcher is still up.
+=== restart 1 (marker before: announced:downtime:stuckgen1; reopen-count=none)
+arm pid 50388 EXITED; .watch.lock present? no
+  | watcher: started pid=50445 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:51001.1790366983.cYD7pk; reopen-count=1; reopen-settled=none
+=== restart 2 (marker before: announced:downtime:51001.1790366983.cYD7pk; reopen-count=1)
+arm pid 51970 EXITED; .watch.lock present? no
+  | watcher: started pid=51985 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:52183.1790366995.lqBJN5; reopen-count=2; reopen-settled=none
+=== restart 3 (marker before: announced:downtime:52183.1790366995.lqBJN5; reopen-count=2)
+arm pid 53896 EXITED; .watch.lock present? no
+  | watcher: started pid=53938 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:54516.1790367008.yPG3AM; reopen-count=3; reopen-settled=none
+=== restart 4 (marker before: announced:downtime:54516.1790367008.yPG3AM; reopen-count=3)
+arm pid 56521 STILL RUNNING after 12s; .watch.lock pid=56564; beacon age=1s
+  | watcher: started pid=56564 (beacon fresh)
+  marker after: acked:downtime:54516.1790367008.yPG3AM; reopen-count=none; reopen-settled=54516.1790367008.yPG3AM
+  +20s: arm pid 56521 alive? yes; .watch.lock pid=56564; watcher alive? yes; beacon age=2s
+  +40s: arm pid 56521 alive? yes; .watch.lock pid=56564; watcher alive? yes; beacon age=2s
+  +60s: arm pid 56521 alive? yes; .watch.lock pid=56564; watcher alive? yes; beacon age=4s
+=== restart 5 after settle (marker before: acked:downtime:54516.1790367008.yPG3AM)
+arm pid 71866 EXITED after 15s; .watch.lock pid=ABSENT
+  | watcher: started pid=72355 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:72102.1790367102.LGoLDb; reopen-count=none
+=== restart 6 after settle (marker before: announced:downtime:72102.1790367102.LGoLDb)
+arm pid 76209 EXITED after 15s; .watch.lock pid=ABSENT
+  | watcher: started pid=76224 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:76539.1790367121.ooMteS; reopen-count=1
+=== queued row still durable?
+  | 1790366895	1	check	stuck-queued	check: stuck queued row
+=== restart 7 (marker before: announced:downtime:76539.1790367121.ooMteS; reopen-count=1)
+arm pid 95842 EXITED after 12s
+  | watcher: started pid=95883 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:96318.1790367228.mhCmKs
+=== restart 8 (marker before: announced:downtime:96318.1790367228.mhCmKs; reopen-count=2)
+arm pid 97717 EXITED after 12s
+  | watcher: started pid=97746 (beacon fresh)
+  | check: rearm-resurface
+  marker after: announced:downtime:98237.1790367240.GvJl86
+=== restart 9 (marker before: announced:downtime:98237.1790367240.GvJl86; reopen-count=3)
+arm pid 2424 STILL RUNNING after 12s
+  | watcher: started pid=2468 (beacon fresh)
+  marker after: acked:downtime:98237.1790367240.GvJl86
+=== plain arm (no --restart), as a turn-end auto-arm would do, against the live settled watcher
+plain arm pid 6836 STILL RUNNING; .watch.lock pid=2468
+  | watcher: attached pid=2468 (beacon 1s)
+  marker after: acked:downtime:98237.1790367240.GvJl86
+=== next session drain (fm-wake-drain.sh) presents the durable queued row
+  | 1790366895	1	check	stuck-queued	check: stuck queued row
+  | WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 10777.1790367281.ksuHTV

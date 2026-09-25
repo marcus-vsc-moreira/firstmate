@@ -1,0 +1,25 @@
+BASELINE (base commit 8d2ee29, before the fix). Same seed: announced marker + one queued row, no session. Operator runs --restart 6 times.
+=== restart 1 (marker before: announced:downtime:stuckgen1)
+arm pid 17375 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=17524 (beacon fresh)
+  | check: rearm-resurface
+=== restart 2 (marker before: announced:downtime:17863.1790367303.LOiFbv)
+arm pid 18536 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=18556 (beacon fresh)
+  | check: rearm-resurface
+=== restart 3 (marker before: announced:downtime:18768.1790367314.lvFEY9)
+arm pid 20329 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=20398 (beacon fresh)
+  | check: rearm-resurface
+=== restart 4 (marker before: announced:downtime:20761.1790367326.7yIa6G)
+arm pid 24527 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=24571 (beacon fresh)
+  | check: rearm-resurface
+=== restart 5 (marker before: announced:downtime:25340.1790367338.lVzLAm)
+arm pid 27452 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=27481 (beacon fresh)
+  | check: rearm-resurface
+=== restart 6 (marker before: announced:downtime:28046.1790367350.XKxod5)
+arm pid 34048 EXITED after 12s; .watch.lock ABSENT
+  | watcher: started pid=34126 (beacon fresh)
+  | check: rearm-resurface

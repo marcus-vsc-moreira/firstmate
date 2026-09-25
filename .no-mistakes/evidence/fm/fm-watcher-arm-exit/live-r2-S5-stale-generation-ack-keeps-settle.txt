@@ -1,0 +1,11 @@
+=== S5 (adversarial): bound settled G1, an ack for a STALE generation G0 arrives with row 2 queued -> sentinel kept, watcher stays up
+LAB FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.M05wyp
+$ bin/fm-wake-drain.sh --ack-through 1 --recovery-generation G0
+  | wake drain: acknowledged wakes through 1 (1 row(s) consumed), but a newer recovery episode is pending; re-run bin/fm-wake-drain.sh and use the new WAKE_ACK_REQUIRED command
+  marker=acked:downtime:G1; reopen-count=none; reopen-settled=G1
+  arm r1: STILL RUNNING after 15s; .watch.lock pid=
+  | watcher: started pid=63125 (beacon fresh)
+  marker=acked:downtime:G1; reopen-count=none; reopen-settled=G1
+  queue:
+  | 1790367984	2	check	row-two	check: row-two
+  lab removed

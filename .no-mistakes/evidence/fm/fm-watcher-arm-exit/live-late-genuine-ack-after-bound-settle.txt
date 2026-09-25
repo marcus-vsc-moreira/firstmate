@@ -1,0 +1,16 @@
+Seed: bound already settled generation G1 (marker acked:downtime:G1, reopen-settled=G1). Queue holds rows 1 and 2. A live session now runs its printed ack for row 1 / G1.
+$ bin/fm-wake-drain.sh --ack-through 1 --recovery-generation G1
+  exit=0
+  marker=acked:downtime:G1; reopen-settled=G1
+  queue now:
+  | 1790367448	2	check	row-two	check: row two (arrived during handling)
+$ bin/fm-watch-arm.sh --restart
+arm STILL RUNNING
+  | watcher: started pid=53090 (beacon fresh)
+  marker after: acked:downtime:G1
+
+RESULT: FAIL. The genuine ack for G1 did not clear .watcher-down.reopen-settled, so the next arm treated
+G1 as bound-settled and did NOT re-announce row 2 (no 'check: rearm-resurface'). Row 2 sits unpresented
+until an unrelated later drain. Cause: bin/fm-wake-drain.sh:713-729 calls fm_recovery_marker_ack (which
+now clears the sentinel) only when the queue is empty after the ack; with a row left over it only takes
+a snapshot, so the R3-2 clearing code in _fm_recovery_marker_ack is never reached in this case.

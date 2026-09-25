@@ -1,0 +1,33 @@
+=== S1: stuck announced episode + queued row, no session, no loop; operator re-arms with --restart
+LAB FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.3V0Ivw
+restart 1 (before: announced:downtime:stuckgen1)
+  arm r1: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=62202 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:63139.1790367986.f2qofj; reopen-count=1; reopen-settled=none
+restart 2 (before: announced:downtime:63139.1790367986.f2qofj)
+  arm r2: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=68215 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:69251.1790367998.VQzBvt; reopen-count=2; reopen-settled=none
+restart 3 (before: announced:downtime:69251.1790367998.VQzBvt)
+  arm r3: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=70733 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:71102.1790368010.tPV5k9; reopen-count=3; reopen-settled=none
+restart 4 (before: announced:downtime:71102.1790368010.tPV5k9)
+  arm r4: STILL RUNNING after 12s; .watch.lock pid=
+  | watcher: started pid=73513 (beacon fresh)
+  marker=acked:downtime:71102.1790368010.tPV5k9; reopen-count=none; reopen-settled=71102.1790368010.tPV5k9
+  +20s: arm alive? yes; lock pid=; beacon age=12s
+  +40s: arm alive? yes; lock pid=; beacon age=14s
+  +60s: arm alive? yes; lock pid=; beacon age=0s
+queued row still durable?
+  | 1790367984	1	check	stuck-queued	check: stuck-queued
+plain arm (no --restart) like a turn-end auto-arm:
+  plain arm alive? yes
+  | watcher: attached pid=73513 (beacon 0s)
+next session drain:
+  | 1790367984	1	check	stuck-queued	check: stuck-queued
+  | WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 95689.1790368101.yzAK8N
+  lab removed

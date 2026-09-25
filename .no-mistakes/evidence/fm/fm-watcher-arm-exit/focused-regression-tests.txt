@@ -1,0 +1,3 @@
+ok - watch-arm: a stuck unacknowledged recovery episode settles after a bounded number of reopens instead of looping forever
+ok - watch-arm: a settled recovery episode with queued rows keeps the watcher up and leaves the rows for the next drain
+ok - watch-arm: a genuinely acknowledged episode with a queued row still resurfaces on re-arm

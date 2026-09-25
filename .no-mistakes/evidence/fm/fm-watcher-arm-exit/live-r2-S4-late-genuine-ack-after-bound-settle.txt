@@ -1,0 +1,12 @@
+=== S4 (adversarial R3-2): bound settled G1, then a live session acks row 1 / G1 with row 2 still queued -> next arm must re-announce row 2
+LAB FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.QKQdLo
+  marker=acked:downtime:G1; reopen-count=none; reopen-settled=G1
+$ bin/fm-wake-drain.sh --ack-through 1 --recovery-generation G1
+  marker=acked:downtime:G1; reopen-count=none; reopen-settled=none
+  queue:
+  | 1790367961	2	check	row-two	check: row-two
+  arm r1: EXITED rc=0 after 15s; .watch.lock=ABSENT
+  | watcher: started pid=60088 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:60565.1790367964.zHiURW; reopen-count=none; reopen-settled=none
+  lab removed

@@ -1,0 +1,23 @@
+=== S2: stuck announced episode, empty queue
+LAB FM_HOME=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.0uGu8C
+restart 1 (before: announced:downtime:stuckgen1)
+  arm r1: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=62190 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:63116.1790367986.wFjvuv; reopen-count=1; reopen-settled=none
+restart 2 (before: announced:downtime:63116.1790367986.wFjvuv)
+  arm r2: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=68204 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:69252.1790367998.uqWu1l; reopen-count=2; reopen-settled=none
+restart 3 (before: announced:downtime:69252.1790367998.uqWu1l)
+  arm r3: EXITED rc=0 after 12s; .watch.lock=ABSENT
+  | watcher: started pid=70732 (beacon fresh)
+  | check: rearm-resurface
+  marker=announced:downtime:71103.1790368010.Wi9Nng; reopen-count=3; reopen-settled=none
+restart 4 (before: announced:downtime:71103.1790368010.Wi9Nng)
+  arm r4: STILL RUNNING after 12s; .watch.lock pid=
+  | watcher: started pid=73514 (beacon fresh)
+  marker=acked:downtime:71103.1790368010.Wi9Nng; reopen-count=none; reopen-settled=71103.1790368010.Wi9Nng
+  +30s: arm alive? yes; lock pid=
+  lab removed
