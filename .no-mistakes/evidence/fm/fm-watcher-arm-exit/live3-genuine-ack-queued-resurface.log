@@ -1,0 +1,13 @@
+== case=genuine-ack-queued commit=5d056a0 limit=default(3)
+-- restart #1 arm-pid=32525
+   out: watcher: started pid=32583 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:32583.1790607041.cvxNNv
+   reopen-count: -  reopen-settled: -
+   queue rows: 1
+-- next session drain:
+   drain: 1790607039	1	check	stuck-queued	check: stuck queued row
+   drain: WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 32583.1790607041.cvxNNv
+-- lab removed

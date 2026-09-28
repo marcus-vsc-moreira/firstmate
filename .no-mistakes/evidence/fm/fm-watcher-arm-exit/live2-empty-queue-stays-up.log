@@ -1,0 +1,37 @@
+== case=empty-queue-announced commit=8900a16 limit=default(3)
+-- restart #1 arm-pid=43426
+   out: watcher: started pid=43446 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.D3VXtT/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #2 arm-pid=44668
+   out: watcher: started pid=44876 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.D3VXtT/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #3 arm-pid=45524
+   out: watcher: started pid=45669 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.D3VXtT/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #4 arm-pid=47438
+   out: watcher: started pid=47534 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.D3VXtT/state/.wake-queue: No such file or directory
+   queue rows: 
+-- after 20s more: arm alive: YES
+   .watch.lock: present  beat-age: 10s
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 39: 47438 Terminated: 15          run bin/fm-watch-arm.sh --restart > "$out" 2>&1
+-- lab removed

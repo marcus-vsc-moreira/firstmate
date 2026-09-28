@@ -1,0 +1,14 @@
+ok - watch-arm: a stuck unacknowledged recovery episode with an empty queue keeps the watcher up on every restart
+ok - watch-arm: a settled recovery episode with queued rows keeps the watcher up and leaves the rows for the next drain
+ok - watch-arm: a genuinely acknowledged episode with a queued row still resurfaces on re-arm
+ok - watch-arm: a genuine ack after a bound settle still resurfaces a newer queued row on re-arm
+ok - watch-arm: a watcher close during handling keeps the printed acknowledgement valid
+ok - watch-arm: --stop ends only this home's watcher, publishes downtime, and reports when none runs
+/Users/marcus.moreira.br/.no-mistakes/worktrees/c7ba7bd9b7dd/01M3M4GBVXZP7PJBQ5VBE8HXQV/bin/fm-watch-arm.sh: line 642: 94730 Killed: 9               "$WATCH" > "$child_out"
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 2 --recovery-generation 97033.1790607903.Mo1t8h
+ok - watch-arm: re-arm surfaces every queued wake and an open remote decision after downtime
+rc=0
+file-rc=0
+ok - fm-guard: never repairs a missing state/.lock (main, read-only, or supervision-branch caller)
+ok - fm-lock: the verified-owner path repairs a missing state/.lock
+ok - fm-lock/fm-guard: an existing foreign live lock is refused and left untouched

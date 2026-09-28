@@ -1,0 +1,9 @@
+== case=acked-queued lab=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.HhxVJ1 limit=default(3)
+-- restart #1  arm-pid=36916
+   out: watcher: started pid=36972 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:36972.1790605495.7cCxpo
+   reopen-count: -  reopen-settled: -
+   queue rows: 1

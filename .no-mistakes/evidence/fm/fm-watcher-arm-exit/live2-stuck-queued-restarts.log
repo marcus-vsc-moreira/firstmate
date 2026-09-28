@@ -1,0 +1,44 @@
+== case=stuck-queued commit=8900a16 limit=default(3)
+-- restart #1 arm-pid=17965
+   out: watcher: started pid=17985 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:17985.1790606458.NS8dCz
+   reopen-count: 1  reopen-settled: -
+   queue rows: 1
+-- restart #2 arm-pid=18627
+   out: watcher: started pid=18647 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:18647.1790606466.Y36K7M
+   reopen-count: 2  reopen-settled: -
+   queue rows: 1
+-- restart #3 arm-pid=19192
+   out: watcher: started pid=19212 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:19212.1790606474.HDMPDf
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #4 arm-pid=20813
+   out: watcher: started pid=20836 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:19212.1790606474.HDMPDf
+   reopen-count: -  reopen-settled: 19212.1790606474.HDMPDf
+   queue rows: 1
+-- restart #5 arm-pid=24382
+   out: watcher: started pid=24814 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:20836.1790606492.j7nZXm
+   reopen-count: -  reopen-settled: 19212.1790606474.HDMPDf
+   queue rows: 1
+-- next session drain:
+   drain: 1790606456	1	check	stuck-queued	check: stuck queued row
+   drain: WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 20836.1790606492.j7nZXm
+-- lab removed

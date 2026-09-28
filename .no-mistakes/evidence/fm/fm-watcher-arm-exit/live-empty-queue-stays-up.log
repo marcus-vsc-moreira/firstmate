@@ -1,0 +1,6 @@
+== code=/Users/marcus.moreira.br/.no-mistakes/worktrees/c7ba7bd9b7dd/01M3M4GBVXZP7PJBQ5VBE8HXQV
+-- restart #1: watcher: started pid=64154 (beacon fresh); | arm alive=YES | lock=64154 | marker=announced:downtime:seedgen1 | settled=-
+-- restart #2: watcher: started pid=66782 (beacon fresh); | arm alive=YES | lock=66782 | marker=announced:downtime:seedgen1 | settled=-
+/tmp/fm-live-empty.sh: line 25: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.G9VlPh/state/.wake-queue: No such file or directory
+queue rows kept: 
+/tmp/fm-live-empty.sh: line 9: 66368 Terminated: 15          ( cd "$WT"; env -u NO_MISTAKES_GATE -u FM_GATE_REFUSE_BYPASS -u FM_ROOT_OVERRIDE -u FM_STATE_OVERRIDE -u FM_DATA_OVERRIDE -u FM_CONFIG_OVERRIDE -u FM_PROJECTS_OVERRIDE FM_HOME="$LAB" FM_POLL=1 FM_SIGNAL_GRACE=0 FM_CHECK_INTERVAL=999999 FM_HEARTBEAT=999999 bin/fm-watch-arm.sh --restart ) > "$out" 2>&1

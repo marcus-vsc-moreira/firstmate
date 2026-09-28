@@ -1,0 +1,9 @@
+ok - watch-arm: a stuck unacknowledged recovery episode with an empty queue keeps the watcher up on every restart
+ok - watch-arm: a settled recovery episode with queued rows keeps the watcher up and leaves the rows for the next drain
+ok - watch-arm: a genuinely acknowledged episode with a queued row still resurfaces on re-arm
+ok - watch-arm: a genuine ack after a bound settle still resurfaces a newer queued row on re-arm
+rc=0
+ok - fm-guard: never repairs a missing state/.lock (main, read-only, or supervision-branch caller)
+ok - fm-lock: the verified-owner path repairs a missing state/.lock
+ok - fm-lock/fm-guard: an existing foreign live lock is refused and left untouched
+rc=0

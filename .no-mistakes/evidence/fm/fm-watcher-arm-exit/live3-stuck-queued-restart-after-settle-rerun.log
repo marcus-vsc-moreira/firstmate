@@ -1,0 +1,74 @@
+== case=stuck-queued-restart-after-settle-rerun commit=5d056a0 limit=default(3)
+-- restart #1 arm-pid=15216
+   out: watcher: started pid=15253 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 20s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:15253.1790607589.Vak68k
+   reopen-count: 1  reopen-settled: -
+   queue rows: 1
+-- restart #2 arm-pid=19657
+   out: watcher: started pid=19752 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 20s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:19752.1790607611.lCFjAy
+   reopen-count: 2  reopen-settled: -
+   queue rows: 1
+-- restart #3 arm-pid=23125
+   out: watcher: started pid=23201 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 20s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #4 arm-pid=27023
+   out: watcher: started pid=27070 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- restart #5 arm-pid=34014
+   out: watcher: started pid=34149 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- restart #6 arm-pid=36984
+   out: watcher: started pid=37124 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- restart #7 arm-pid=44467
+   out: watcher: started pid=45100 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- restart #8 arm-pid=48847
+   out: watcher: started pid=48951 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- restart #9 arm-pid=50981
+   out: watcher: started pid=51124 (beacon fresh)
+   arm alive after 20s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:23201.1790607633.Qx28ZQ
+   reopen-count: -  reopen-settled: 23201.1790607633.Qx28ZQ
+   queue rows: 1
+-- after 20s more: arm alive: YES
+   .watch.lock: present  beat-age: 2s
+-- next session drain:
+   drain: 1790607588	1	check	stuck-queued	check: stuck queued row
+   drain: WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 64869.1790607794.znAOYY
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive20.sh: line 39: 50981 Terminated: 15          run bin/fm-watch-arm.sh --restart > "$out" 2>&1
+-- lab removed

@@ -1,0 +1,11 @@
+== code=/Users/marcus.moreira.br/.no-mistakes/worktrees/c7ba7bd9b7dd/01M3M4GBVXZP7PJBQ5VBE8HXQV
+-- restart #1: watcher: started pid=74092 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:74092.1790606177.3iWPon | settled=-
+-- restart #2: watcher: started pid=74770 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:74770.1790606185.gZ9EYN | settled=-
+-- restart #3:  | arm alive=YES | lock=75358 | marker=announced:downtime:75358.1790606194.6cXnrK | settled=-
+-- restart #4: watcher: started pid=76068 (beacon fresh); | arm alive=YES | lock=76068 | marker=acked:downtime:75358.1790606194.6cXnrK | settled=75358.1790606194.6cXnrK
+-- restart #5: watcher: started pid=79280 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:76068.1790606218.4tO2vD | settled=75358.1790606194.6cXnrK
+-- restart #6: watcher: started pid=82416 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:82416.1790606225.i9wFeZ | settled=75358.1790606194.6cXnrK
+-- restart #7: watcher: started pid=83900 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:83900.1790606233.QFSReN | settled=75358.1790606194.6cXnrK
+-- restart #8: watcher: started pid=84431 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:84431.1790606241.GP4MZB | settled=75358.1790606194.6cXnrK
+-- restart #9: watcher: started pid=86229 (beacon fresh); | arm alive=YES | lock=86229 | marker=acked:downtime:84431.1790606241.GP4MZB | settled=84431.1790606241.GP4MZB
+queue rows kept: 1

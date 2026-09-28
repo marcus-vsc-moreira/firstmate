@@ -1,0 +1,77 @@
+== case=stuck-queued-restart-after-settle-solo commit=5d056a0 limit=default(3)
+-- restart #1 arm-pid=56772
+   out: watcher: started pid=56793 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:56793.1790607154.9NFx4r
+   reopen-count: 1  reopen-settled: -
+   queue rows: 1
+-- restart #2 arm-pid=58483
+   out: watcher: started pid=58614 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:58614.1790607165.FjvbDG
+   reopen-count: 2  reopen-settled: -
+   queue rows: 1
+-- restart #3 arm-pid=61144
+   out: bin/fm-watch-arm.sh: line 507: 61173 Terminated: 15          "$WATCH" > "$child_out"
+   arm alive after 8s: NO (exited)
+   .watch.lock: present pid=
+   marker: pending:downtime:61173.1790607188.ErniX0
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #4 arm-pid=62627
+   out: bin/fm-watch-arm.sh: line 507: 62647 Terminated: 15          "$WATCH" > "$child_out"
+   out: watcher: FAILED - no live watcher with a fresh beacon
+   arm alive after 8s: NO (exited)
+   .watch.lock: present pid=
+   marker: announced:downtime:61173.1790607188.ErniX0
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #5 arm-pid=63875
+   out: bin/fm-watch-arm.sh: line 507: 64017 Terminated: 15          "$WATCH" > "$child_out"
+   out: watcher: FAILED - no live watcher with a fresh beacon
+   arm alive after 8s: NO (exited)
+   .watch.lock: present pid=
+   marker: announced:downtime:61173.1790607188.ErniX0
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #6 arm-pid=66294
+   out: bin/fm-watch-arm.sh: line 507: 66315 Terminated: 15          "$WATCH" > "$child_out"
+   out: watcher: FAILED - no live watcher with a fresh beacon
+   arm alive after 8s: NO (exited)
+   .watch.lock: present pid=
+   marker: acked:downtime:61173.1790607188.ErniX0
+   reopen-count: -  reopen-settled: 61173.1790607188.ErniX0
+   queue rows: 1
+-- restart #7 arm-pid=67048
+   out: watcher: started pid=67118 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: acked:downtime:61173.1790607188.ErniX0
+   reopen-count: -  reopen-settled: 61173.1790607188.ErniX0
+   queue rows: 1
+-- restart #8 arm-pid=70257
+   out: watcher: started pid=70277 (beacon fresh)
+   arm alive after 14s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:61173.1790607188.ErniX0
+   reopen-count: -  reopen-settled: 61173.1790607188.ErniX0
+   queue rows: 1
+-- restart #9 arm-pid=71156
+   out: watcher: started pid=71796 (beacon fresh)
+   arm alive after 14s: YES
+   .watch.lock: present pid=
+   marker: acked:downtime:61173.1790607188.ErniX0
+   reopen-count: -  reopen-settled: 61173.1790607188.ErniX0
+   queue rows: 1
+-- after 20s more: arm alive: YES
+   .watch.lock: present  beat-age: 7s
+-- next session drain:
+   drain: 1790607148	1	check	stuck-queued	check: stuck queued row
+   drain: WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 75903.1790607300.tlJQUu
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive14.sh: line 39: 71156 Terminated: 15          run bin/fm-watch-arm.sh --restart > "$out" 2>&1
+-- lab removed

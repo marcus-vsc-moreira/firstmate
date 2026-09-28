@@ -1,0 +1,7 @@
+== code=/tmp/fm-base
+-- restart #1: watcher: started pid=95991 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:95991.1790605763.LfpSGq | settled=-
+-- restart #2: watcher: started pid=97798 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:97798.1790605779.N05OLb | settled=-
+-- restart #3: watcher: started pid=98762 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:98762.1790605795.YAZgq2 | settled=-
+-- restart #4: watcher: started pid=2010 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:2010.1790605811.SJo36w | settled=-
+-- restart #5: watcher: started pid=6973 (beacon fresh);check: rearm-resurface; | arm alive=NO | lock=absent | marker=announced:downtime:6973.1790605826.bu1oss | settled=-
+queue rows kept: 1

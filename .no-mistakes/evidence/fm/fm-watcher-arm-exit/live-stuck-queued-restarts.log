@@ -1,0 +1,38 @@
+== case=stuck-queued lab=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.0fUKxc limit=default(3)
+-- restart #1  arm-pid=25434
+   out: watcher: started pid=25457 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:25457.1790605438.e9UOfZ
+   reopen-count: 1  reopen-settled: -
+   queue rows: 1
+-- restart #2  arm-pid=27152
+   out: watcher: started pid=27209 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:27209.1790605446.uAoZKs
+   reopen-count: 2  reopen-settled: -
+   queue rows: 1
+-- restart #3  arm-pid=27895
+   out: watcher: started pid=27914 (beacon fresh)
+   out: check: rearm-resurface
+   arm alive after 8s: NO (exited)
+   .watch.lock: absent
+   marker: announced:downtime:27914.1790605454.4Qzljy
+   reopen-count: 3  reopen-settled: -
+   queue rows: 1
+-- restart #4  arm-pid=28427
+   out: watcher: started pid=28446 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=28446
+   marker: acked:downtime:27914.1790605454.4Qzljy
+   reopen-count: -  reopen-settled: 27914.1790605454.4Qzljy
+   queue rows: 1
+-- watcher stayed up; wait 20s more
+   arm still alive after 28s: YES
+   .watch.lock: present pid=28446  beat-age: 2s
+-- next session drain:
+   drain: 1790605437	1	check	stuck-queued	check: stuck queued row
+   drain: WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 28446.1790605490.Lei78G

@@ -1,0 +1,36 @@
+== case=empty-queue-announced commit=5d056a0 limit=default(3)
+-- restart #1 arm-pid=32518
+   out: watcher: started pid=32580 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.cV0NpM/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #2 arm-pid=34397
+   out: watcher: started pid=34701 (beacon fresh)
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.cV0NpM/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #3 arm-pid=36348
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.cV0NpM/state/.wake-queue: No such file or directory
+   queue rows: 
+-- restart #4 arm-pid=38199
+   arm alive after 8s: YES
+   .watch.lock: present pid=
+   marker: announced:downtime:seedgen1
+   reopen-count: -  reopen-settled: -
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 26: /var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.cV0NpM/state/.wake-queue: No such file or directory
+   queue rows: 
+-- after 20s more: arm alive: YES
+   .watch.lock: present  beat-age: 4s
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 39: 36348 Terminated: 15          run bin/fm-watch-arm.sh --restart > "$out" 2>&1
+/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-live-drive.sh: line 39: 38199 Terminated: 15          run bin/fm-watch-arm.sh --restart > "$out" 2>&1
+-- lab removed
