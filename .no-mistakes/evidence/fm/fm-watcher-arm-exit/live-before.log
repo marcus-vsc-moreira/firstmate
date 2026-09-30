@@ -1,0 +1,30 @@
+=== [base 46d58d6] lab=/var/folders/dm/8yjy9kvn7x1bfl9q4pggbmbw0000gq/T//fm-lab.XZn6lq  session lock present? no
+--- restart #1 output:
+    watcher: started pid=11572 (beacon fresh)
+    check: rearm-resurface
+    arm alive after 12s: no
+    watcher pid=11572 alive: no
+    state/.watch.lock present: no
+    marker: announced:downtime:11572.1790738407.EORLWs  reopen-count: -  settled: -
+    beacon age: 8s
+--- restart #2 output:
+    watcher: started pid=17082 (beacon fresh)
+    check: rearm-resurface
+    arm alive after 12s: no
+    watcher pid=17082 alive: no
+    state/.watch.lock present: no
+    marker: announced:downtime:17082.1790738418.h8DtQK  reopen-count: -  settled: -
+    beacon age: 9s
+--- restart #3 output:
+    watcher: started pid=21869 (beacon fresh)
+    check: rearm-resurface
+    arm alive after 12s: no
+    watcher pid=21869 alive: no
+    state/.watch.lock present: no
+    marker: announced:downtime:21869.1790738431.DDvxgB  reopen-count: -  settled: -
+    beacon age: 8s
+--- queued rows still durable: 18
+    stop: watcher: none running
+--- next-session drain shows rows:
+    rows presented: 18
+=== lab removed

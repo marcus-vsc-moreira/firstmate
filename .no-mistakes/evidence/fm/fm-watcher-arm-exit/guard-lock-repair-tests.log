@@ -1,0 +1,3 @@
+ok - fm-guard: never repairs a missing state/.lock (main, read-only, or supervision-branch caller)
+ok - fm-lock: the verified-owner path repairs a missing state/.lock with the live harness pid
+ok - fm-lock/fm-guard: an existing foreign live lock is refused and left untouched

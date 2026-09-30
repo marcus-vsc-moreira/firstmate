@@ -1,0 +1,8 @@
+ok - watch-arm: a stuck unacknowledged recovery episode with an empty queue keeps the watcher up on every restart
+ok - watch-arm: a settled recovery episode with queued rows keeps the watcher up and leaves the rows for the next drain
+ok - watch-arm: a genuinely acknowledged episode with a queued row still resurfaces on re-arm
+ok - watch-arm: a genuine ack after a bound settle still resurfaces a newer queued row on re-arm
+ok - watch-arm: a stale zero-row ack keeps a bound-settled episode settled and the watcher up
+ok - watch-arm: a non-numeric FM_RECOVERY_REOPEN_LIMIT falls back to the default bound
+ok - watch-arm: an append that mints a fresh episode resets the reopen budget
+ok - watch-arm: a failed append keeps the restored episode's reopen count

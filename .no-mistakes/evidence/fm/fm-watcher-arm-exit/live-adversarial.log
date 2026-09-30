@@ -1,0 +1,14 @@
+## FM_RECOVERY_REOPEN_LIMIT=bogus (typo) - must fall back to 1
+restart#1 (exited): watcher: started pid=46877 (beacon fresh) check: rearm-resurface 
+restart#2:  marker=acked:downtime:46877.1790739161.9oyJjA
+## soak 60s
+t=20s arm alive=YES watch.lock=YES
+t=40s arm alive=YES watch.lock=YES
+t=60s arm alive=YES watch.lock=YES
+## genuine session ack, then a new durable wake: must still resurface once
+stop: watcher: stopped pid=50264
+drain presented: 1 row(s); WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 72483.1790739232.uqJnck
+ack rc=0 marker=acked:handling:72483.1790739232.uqJnck settled=- queue=0
+marker before restart: acked:handling:72483.1790739232.uqJnck
+restart after genuine ack+new row (exited): watcher: started pid=73692 (beacon fresh) check: rearm-resurface 
+lab removed
